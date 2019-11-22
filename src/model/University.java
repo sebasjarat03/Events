@@ -22,7 +22,7 @@ public class University {
 			msg = temp.showAudi();
 		}
 		else{
-			msg = "nosss";
+			msg = "\nThis auditorium doesn't exists";
 		}
 		return msg;
 	}
@@ -57,20 +57,7 @@ public class University {
 		return temp;
 	}
 	
-	public String removeEvent(String name) {
-		String msg = "";
-		for(int i = 0; i<events.size(); i++) {
-			if(events.get(i).getName().equalsIgnoreCase(name)) {
-				events.remove(i);
-				msg += "\nEvent removed successfully";
-			}
-		}
-		if (msg.equalsIgnoreCase("")) {
-			msg+= "\nEvent not found";
-		}
-		return msg;
-		
-	}
+	
 
 	public String showEvents(){
 		String msg = "";
@@ -85,10 +72,7 @@ public class University {
 
 	}
 
-	public String getStatusaud(String name){
-		String msg =searchAuditorium(name).getStatus();
-		return msg;
-	}
+	
 
 	public String addAuditorium(String name, int[] rows){
 		String msg = "";
@@ -98,7 +82,7 @@ public class University {
 				if(searchAuditorium(name)==null){
 					auditorium[i] = new Auditorium(name, rows);
 					created = true;
-					msg += "Auditorium added";
+					msg += "\nAuditorium added";
 				}
 			}
 		}
@@ -113,8 +97,8 @@ public class University {
 		if(temp != null){
 			if(searchAuditorium(audName).getStatus().equalsIgnoreCase("available")){
 				searchEvent(eventName).setAuditorium(searchAuditorium(audName));
-				
-				msg = "Auditorium added successfully";
+				searchAuditorium(audName).setEvent(searchEvent(eventName));
+				msg = "\nAuditorium added successfully";
 			}
 		}
 		return msg;
@@ -144,15 +128,15 @@ public class University {
 	}
 
 		if(initialDate.isBefore(LocalDateTime.now())){
-			msg += "Event's date can´t be before the current date";
+			msg += "\nEvent's date can´t be before the current date";
 		}
 
 		if(durationHours1 >12 || durationHours1<2){
-			msg += "The event must last at least 2 hours and less than 12";
+			msg += "\nThe event must last at least 2 hours and less than 12";
 		}
 
 		if(initialDate.getHour()<7 || initialDate.getHour()>20){
-			msg+= "The event must begin after 7:00 am and before 20:00 pm";
+			msg+= "\nThe event must begin after 7:00 am and before 20:00 pm";
 		}
 
 
@@ -192,7 +176,7 @@ public class University {
 
 		}
 		else{
-			msg = "This auditorium doesn´t exists";
+			msg = "\nThis auditorium doesn´t exists";
 		}
 		return msg;
 	}
@@ -201,14 +185,15 @@ public class University {
 		String msg = "";
 		Auditorium temp = searchAuditorium(name);
 		if(temp != null){
-			msg = "The percentage of defective chairs is " + temp.calculateDefectivePercentage() + "%";
+			msg = "\nThe percentage of defective chairs is " + temp.calculateDefectivePercentage() + "%";
 		}
 		else{
-			msg = "This auditorium doesn't exists";
+			msg = "\nThis auditorium doesn't exists";
 		}
 		return msg;
 	}
 
+	
 	
 
 

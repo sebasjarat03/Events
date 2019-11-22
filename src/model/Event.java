@@ -84,6 +84,10 @@ public class Event {
         return msg;
     }
 
+    public Auditorium[] getAuditoriums(){
+        return this.auditorium;
+    }
+
     
 
     

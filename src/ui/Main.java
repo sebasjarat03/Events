@@ -26,7 +26,7 @@ public class Main {
 			System.out.println("\nSelect the option:");
 			System.out.println("1) Add auditorium 				2) Add event				3) Show auditoriums");
 			System.out.println("4) Add another auditorium for an event  	5) Report defective chairs 		6) Calculate percentage of defective chairs");
-			System.out.println("7) Show events");
+			System.out.println("7) Show events ");
 			System.out.println("10) Exit");
 			opc = sci.nextInt();
 			
@@ -62,8 +62,13 @@ public class Main {
 			case 7:
 				System.out.println(univ.showEvents());
 				break;
+			
 			case 10:
 				System.out.println("\nGoodbye!");
+				break;
+			default:
+				System.out.println("Enter a valid option");
+				break;
 			
  			}
 		}
@@ -74,7 +79,7 @@ public class Main {
 		System.out.print("Enter the name of the event: "); String name = scs.nextLine();
 		System.out.print("Enter the date(yyyy-mm-dd): "); String date = scs.nextLine();
 		System.out.print("Enter the initial hour(HH:MM): "); String inHour = scs.nextLine();
-		System.out.print("Enter the duration hours(HH:MM): "); String durationHours = scs.nextLine();
+		System.out.print("Enter the duration hours: "); String durationHours = scs.nextLine();
 		System.out.print("Enter the name of the responsible teacher: "); String nameTeacher = scs.nextLine();
 		System.out.print("Enter the name of the auditorium: "); String audName = scs.nextLine();
 		

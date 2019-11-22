@@ -3,13 +3,14 @@ import java.util.ArrayList;
 import java.time.*;
 
 public class Auditorium {
-    public final String AVAILABLE = "available";
-    public final String BUSY = "busy";
+    public static final String AVAILABLE = "available";
+    public static final String BUSY = "busy";
     private String name;
     private String status;
     private ArrayList<Event> events;
     private Chair chairs[][];
     private int[] audRows;
+    private String eventName;
     
 
     public Auditorium(String name, int[] rows){
@@ -73,7 +74,7 @@ public class Auditorium {
     }
 
     public String reportDefectiveChair(char prow, int num, String description) {
-		String msg = "We're sorry '" + prow + "' is not a valid row";
+		String msg = "\nWe're sorry '" + prow + "' is not a valid row";
 		num--;
 		int newrow = -1;
 		
@@ -88,14 +89,14 @@ public class Auditorium {
 		}
 		
 		if(newrow < 0 || newrow > chairs.length) { return msg;}
-		if(num < 0 || num > chairs[0].length-1) { return "We're sorry '" + (num + 1) + "' is not a valid chair number";}
+		if(num < 0 || num > chairs[0].length-1) { return "\nWe're sorry '" + (num + 1) + "' is not a valid chair number";}
 			
 		if(chairs[newrow][num] != null) {
 			chairs[newrow][num].setDescription(description);
 			chairs[newrow][num].setState(Chair.DEFECTIVE);
-			msg = "Defect reported successfully";
+			msg = "\nDefect reported successfully";
 		}else {
-			msg = "The chair that you are trying to report doesn't exists.";
+			msg = "\nThe chair that you are trying to report doesn't exists.";
 		}
 		
 		return msg;
@@ -123,6 +124,13 @@ public class Auditorium {
 		return percentage;
 	}
 
+    public String getEventName(){
+        return this.eventName;
+    }
+
+    public void setEventName(String eventName){
+        this.eventName = eventName;
+    }
     
 
     
