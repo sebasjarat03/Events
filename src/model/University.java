@@ -160,13 +160,7 @@ public class University {
 
 	} 
 
-	public boolean audAvailable(Auditorium auditorium){
-		boolean isAvailable = false;
-		if(auditorium.getStatus().equalsIgnoreCase("available")){
-			isAvailable= true;
-		}
-		return isAvailable;
-	}
+	
 
 	public String reportDefectiveChair(String audName, char prow, int num, String description){
 		String msg = "";

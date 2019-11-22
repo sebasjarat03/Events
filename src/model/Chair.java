@@ -48,20 +48,7 @@ public class Chair{
         this.state = state;
     }
 
-    public Chair row(char row) {
-        this.row = row;
-        return this;
-    }
-
-    public Chair numChairs(int numChairs) {
-        this.numChairs = numChairs;
-        return this;
-    }
-
-    public Chair state(String state) {
-        this.state = state;
-        return this;
-    }
+    
 
    
 
