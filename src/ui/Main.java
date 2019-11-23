@@ -25,8 +25,8 @@ public class Main {
 		while (opc!=10) {
 			System.out.println("\nSelect the option:");
 			System.out.println("1) Add auditorium 				2) Add event				3) Show auditoriums");
-			System.out.println("4) Add another auditorium for an event  	5) Report defective chairs 		6) Calculate percentage of defective chairs");
-			System.out.println("7) Show events ");
+			System.out.println("4) Report defective chairs  	5) Calculate percentage of defective chairs 		6) Show events");
+			System.out.println(" ");
 			System.out.println("10) Exit");
 			opc = sci.nextInt();
 			
@@ -44,24 +44,20 @@ public class Main {
 				break;
 			
 			case 4:
-				System.out.print("Enter the name of the event that you want to add another auditorium: "); String eventName = scs.nextLine();
-				System.out.print("Enter the name of the auditorium that you want to add to this event: "); String audName1 = scs.nextLine();
-				System.out.println(univ.addAuditoriumTo(eventName, audName1));
-				break;
-			case 5:
 				System.out.print("Enter the name of the auditorium that you want to report a defective chair: "); String audName2 = scs.nextLine();
 				System.out.print("Enter the row of the chair: "); String row = scs.nextLine().toUpperCase(); char prow = row.charAt(0);
 				System.out.print("Enter the number of the chair: "); int num = sci.nextInt();
 				System.out.print("Enter the description of the defect: "); String description = scs.nextLine();
 				System.out.println(univ.reportDefectiveChair(audName2, prow, num, description));
 				break;
-			case 6:
+			case 5:
 				System.out.print("Enter the name of the auditorium that you want to know the percentage of defective chairs: "); String aName = scs.nextLine();
 				System.out.println(univ.calculateDefectivePercentage(aName));
 				break;
-			case 7:
+			case 6:
 				System.out.println(univ.showEvents());
 				break;
+			
 			
 			case 10:
 				System.out.println("\nGoodbye!");

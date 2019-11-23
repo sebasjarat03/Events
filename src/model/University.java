@@ -91,19 +91,7 @@ public class University {
 
 
 
-	public String addAuditoriumTo(String eventName, String audName){
-		String msg = "";
-		Event temp = searchEvent(eventName);
-		if(temp != null){
-			if(searchAuditorium(audName).getStatus().equalsIgnoreCase("available")){
-				searchEvent(eventName).setAuditorium(searchAuditorium(audName));
-				searchAuditorium(audName).setEvent(searchEvent(eventName));
-				msg = "\nAuditorium added successfully";
-			}
-		}
-		return msg;
-
-	}
+	
 
 	
 
